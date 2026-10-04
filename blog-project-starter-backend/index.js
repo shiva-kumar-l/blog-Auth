@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 // Allowed frontend URLs
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://shiva-bulk-mail.vercel.app",
+  "https://shiva-blog-auth.vercel.app",
 ];
 
 // CORS configuration

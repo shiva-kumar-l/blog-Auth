@@ -25,7 +25,7 @@ function Blogs() {
               console.log('User is signed out.');
             } });
 
-        axios.get("http://localhost:5000/api/blogs").then((res) => {
+        axios.get("https://shiva-blog-auth-backend.vercel.app/api/blogs").then((res) => {
             console.log(res.data)
             setBlogs(res.data)
         }).catch(() => {
@@ -42,10 +42,10 @@ function Blogs() {
 
     const handleLike = async (blog_id) => {
         try {
-            const response = await axios.patch(`http://localhost:5000/api/blogs/like/${blog_id}`);
+            const response = await axios.patch(`https://shiva-blog-auth-backend.vercel.app/api/blogs/like/${blog_id}`);
             // After successfully updating the likes count in the backend, fetch the updated list of blogs
             if (response.status === 200) {
-                axios.get("http://localhost:5000/api/blogs").then((res) => {
+                axios.get("https://shiva-blog-auth-backend.vercel.app/api/blogs").then((res) => {
                     console.log(res.data)
                     setBlogs(res.data)
                 }).catch(() => {
@@ -64,10 +64,10 @@ function Blogs() {
 
 
         const likes = 0
-        axios.post("http://localhost:5000/api/blogs", { newTitle, date, newContent, likes }).then((res) => {
+        axios.post("https://shiva-blog-auth-backend.vercel.app/api/blogs", { newTitle, date, newContent, likes }).then((res) => {
             console.log(res.data)
 
-            axios.get("http://localhost:5000/api/blogs").then((res) => {
+            axios.get("https://shiva-blog-auth-backend.vercel.app/api/blogs").then((res) => {
                 console.log(res.data)
                 setBlogs(res.data)
             }).catch(() => {
