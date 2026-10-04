@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import auth from '../config/firebase';
 
+
 function Login() {
     const navigate = useNavigate()
     const [email, setEmail] = useState('');
@@ -16,7 +17,7 @@ function Login() {
               navigate("/home")  
             }  });
 
-    }, []);
+    }, [navigate]);
 
     const handleLogin = (e) => {
         e.preventDefault();
